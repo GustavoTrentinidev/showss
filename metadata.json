@@ -1,0 +1,6 @@
+{
+  "name": "TOC Conflict Cloud Modeler",
+  "description": "Uma aplicação React para criar e editar Nuvens de Conflito da Teoria das Restrições (TOC). Usuários podem definir objetivos, requisitos e desejos conflitantes para visualizar e analisar problemas.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

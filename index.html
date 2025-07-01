@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelador de Nuvem de Conflito TOC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom scrollbar for better aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9; /* slate-100 */
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1; /* slate-300 */
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8; /* slate-400 */
+    }
+    /* Basic body styling */
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased; /* Safari & Chrome */
+      -moz-osx-font-smoothing: grayscale; /* Firefox */
+      text-rendering: optimizeLegibility;
+      background-color: #f8fafc; /* bg-slate-50 */
+      color: #1e293b; /* text-slate-800 */
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    .conflict-node-arrow {
+      position: relative;
+      width: 1.5rem; 
+      height: 3.5rem; /* Slightly shorter */
+      margin: 0 auto;
+    }
+    .conflict-node-arrow::before { /* Linha */
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0.65rem; /* Deixa espaço para a ponta da seta */
+      width: 1.5px; /* Espessura da linha */
+      background-color: #94a3b8; /* slate-400 */
+      transform: translateX(-50%);
+    }
+    .conflict-node-arrow::after { /* Ponta da seta */
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 0.4rem solid transparent; 
+      border-right: 0.4rem solid transparent; 
+      border-top: 0.65rem solid #94a3b8; /* slate-400 - Cor e tamanho da ponta */
+      transform: translateX(-50%);
+    }
+
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
